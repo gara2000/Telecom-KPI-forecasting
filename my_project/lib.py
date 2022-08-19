@@ -74,7 +74,6 @@ def slider_initializer(title, init_value, min_value, max_value, state_name):
 @st.cache
 def get_data_frame(path):
     df = pd.read_csv(path)
-    df.drop(df.columns[0], axis=1, inplace=True)
     date = df.columns[0]
     df[date]= pd.to_datetime(df[date])
     # time.sleep(4)
